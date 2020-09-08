@@ -1,5 +1,5 @@
 # LatexTemplates
-Latex Templates for Discrete Math, MATH 3336 at University of Houston. I reccomend using https://www.swiftlatex.com/ ... or viewing this at https://www.overleaf.com/read/vzjvddhwcgrr 
+Latex Templates for Discrete Math, MATH 3336 at University of Houston. I recommend using https://www.swiftlatex.com/ ... or viewing this at https://www.overleaf.com/read/vzjvddhwcgrr 
 
 This is a LaTeX template that conforms to the standards required by Dr. Irina Perepelitsa at the University of Houston for MATH 3336 - Discrete Math. I created it entirely from scratch, and designed it specifically to be easy to use by other students. 
 
