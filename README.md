@@ -7,6 +7,10 @@ Towards the goal of ease-of-use for students who have never used TeX before, I'v
 
 There are lots of improvements I'd like to make still. Against best practice, all the code is one file for copy-paste portability, which I feel is important for students to have.
 
+The full page:
+
+![Example Layout](https://github.com/rckoepke/LatexTemplates/blob/master/fullpageexample.JPG?raw=truee)
+
 The PDF included here is an example of the output. It demonstrates output of:
 
 Two Column Proofs:
@@ -21,6 +25,4 @@ The overall layout is mapped to its constituent functions below. It is designed 
 
 ![Example Layout](https://github.com/rckoepke/LatexTemplates/blob/master/examplelayout.png?raw=true)
 
-The full page:
 
-![Example Layout](https://github.com/rckoepke/LatexTemplates/blob/master/fullpageexample.JPG?raw=truee)
