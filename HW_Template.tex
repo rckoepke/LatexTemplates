@@ -1,0 +1,246 @@
+\documentclass[letter]{article}
+\usepackage{amsmath}
+
+\usepackage{lastpage}
+
+
+\usepackage{changepage}% http://ctan.org/pkg/changepage
+\usepackage{lipsum}% http://ctan.org/pkg/lipsum
+
+% This block formats the 
+\usepackage{fancyhdr}
+\setlength{\headheight}{25pt} 
+\pagestyle{fancy}
+\fancyhf{}
+
+\usepackage[nodayofweek]{datetime}
+\rhead{Ross Koepke\\PS\# 1978978\\\today}
+\lhead{MATH 3336 - Discrete Math\\Section 17684 - Fall 2020\\Dr. Irina Perepelitsa}
+\chead{\Large\textbf{Homework \#1}}
+\usepackage{lastpage}
+\cfoot{Page \thepage\ of \pageref{LastPage}}
+
+% The following code is responsible for making sure the section text is actually precisely aligned with every other section
+\usepackage[largestsep]{titlesec}
+\titleformat{\section} 
+	{\normalfont\large\bfseries}{\makebox[30pt][l]{\thesection}}{0pt}{} 
+\titleformat{\subsection} 
+	{\normalfont\normalsize\bfseries}{\makebox[15pt][l]{\thesubsection}}{0pt}{}
+\titleformat{\subsubsection} 
+	{\normalfont\large\bfseries}{\makebox[55pt][l]{\thesubsubsection}}{0pt}{}
+
+\titlespacing*{\section}{0em}{4ex}{2ex}
+\titlespacing*{\subsection}{\parindent}{4ex}{1ex}
+\titlespacing*{\subsubsection}{3em}{0ex}{1ex}
+
+% This code makes the subsections a)...b)...c)... which is usually how they appear in the textbook.
+\renewcommand\thesubsection{\alph{subsection})}
+\renewcommand\thesubsubsection{Answer:}
+
+\newcommand{\problemnumber}[1] {\filbreak\section{#1}}
+\newcommand{\question}[1] {\subsection{#1}}
+\newcommand{\answer}[1] {\subsubsection{#1}}
+\newcommand{\explanation}[1] {\begin{adjustwidth}{3em}{0pt}#1\end{adjustwidth}}
+
+
+\RequirePackage{tabularx}
+
+\newcounter{proofstmt}
+\newenvironment{TwoColumnProof}{
+  \renewcommand{\tabularxcolumn}[1]{>{\raggedright\arraybackslash}p{##1}}
+  \renewcommand{\arraystretch}{1.15}
+  \setcounter{proofstmt}{0}
+  \newcommand{\StatementReason}[2]{%
+    \refstepcounter{proofstmt}
+    \theproofstmt. & ##1 & \theproofstmt. & ##2\\
+  }
+  \vspace{\baselineskip}
+  \noindent\tabularx{\textwidth}{c @{\hspace{0.5em}}X c@{\hspace{0.5em}} X}
+  \hline
+  \multicolumn{2}{c}{\bfseries Statement} & \multicolumn{2}{c}{\bfseries Reason}\\
+  \hline
+}{%
+  \endtabularx%
+  \hrule%
+  \vspace*{\baselineskip}
+}
+
+
+
+\begin{document}
+
+\problemnumber{Exercise 1.1.16}{For each of these arguments determine whether the argument is correct or incorrect and explain why:}
+
+\question{Everyone enrolled in the university has lived in a dormitory.
+Mia has never lived in a dormitory. Therefore,
+Mia is not enrolled in the university.}
+\answer{YES / NO / MAYBE}
+\explanation{My explanation for answer of la de dah. The reasoning behind that is blah de blah. Also hum de lum. Particularly when fi fie fo fum.\\Proof line 1.\\ Proof line 2.}
+
+\question{A convertible car is fun to drive. Isaac’s car is not a
+convertible. Therefore, Isaac’s car is not fun to drive.}
+\answer{15}
+\explanation{When you need the extra width you can use a bit more space by putting your text outside this \{\} block like this.}
+
+\question{Quincy likes all action movies. Quincy likes the
+movie Eight Men Out. Therefore, Eight Men Out is
+an action movie.}
+\answer{$\forall x \exists y , P(x)$}
+
+\problemnumber{Exercise 1.1.20}{Determine whether these are valid arguments.}
+
+\question{If $x$ is a positive real number, then $x^2$ is a positive real
+number. Therefore, if $a^2$ is positive, where $a$ is a real
+number, then $a$ is a positive real number.}
+\answer{This a valid or invalid argument.}
+
+\question{If $x^2 \neq 0$, where $x$ is a real number, then $x \neq 0$. Let $a$
+be a real number with $a^2 \neq 0$; then $a \neq 0$.}
+\answer{This a valid or invalid argument.}
+
+\problemnumber{Exercise 1.1.22}
+
+Which rules of inference are used to establish the
+conclusion of Lewis Carroll’s argument described in
+Example 27 of Section 1.4? That is: 
+\\ \\ Consider these statements, of which the first three are premises and the fourth is a valid conclusion.
+\\ \\“All hummingbirds are richly colored.”
+\\“No large birds live on honey.”
+\\“Birds that do not live on honey are dull in color.”
+\\“Hummingbirds are small.”
+\\ \\ Let $P(x)$, $Q(x)$, $R(x)$, and $S(x)$ be the statements “x is a hummingbird,” “x is large,” “x lives on
+honey,” and “x is richly colored,” respectively. Assuming that the domain consists of all birds,
+express the statements in the argument using quantifiers and $P(x)$, $Q(x)$, $R(x)$, and $S(x)$.
+\\ \\Solution: We can express the statements in the argument as
+\[ \forall x(P(x)) \rightarrow  S(x) \]          % ∀x(P(x) → S(x))
+\[ \neg \exists x(Q(x) \wedge R(x)) \]           % ¬∃x(Q(x) ∧ R(x))
+\[ \forall x(\neg R(x) \rightarrow \neg S(x)) \] % ∀x(¬R(x) → ¬S(x))
+\[ \forall x(P(x) \rightarrow \neg Q(x)) \]% ∀x(P(x) → ¬Q(x))
+(Note we have assumed that “small” is the same as “not large” and that “dull in color” is the
+same as “not richly colored.” To show that the fourth statement is a valid conclusion of the first
+three, we need to use rules of inference that will be discussed in Section 1.6.)
+
+\question{Which rules of inference are used to establish the
+conclusion?}
+\answer{Heck if I know...}
+\explanation{Reading the chapter thoroughly first would really help, I spent all my time making this HW template instead.}
+
+
+\problemnumber{Exercise 1.1.24}
+
+Identify the error or errors in this argument that supposedly
+shows that if 
+%∀x(P(x) ∨ Q(x)) 
+$\forall x(P(x) \vee Q(x))$
+is true then
+% ∀xP(x) ∨ ∀xQ(x)
+$\forall xP(x) \wedge \forall xQ(x)$ 
+is true.
+
+\begin{TwoColumnProof}
+  \StatementReason{∀x(P(x) ∨ Q(x))}
+  {Premise / Given}
+
+  \StatementReason{P(c) ∨ Q(c)}
+  {Universal instantiation from (1)}
+
+  \StatementReason{P(c)}
+  {Simplification from (2)}
+  
+  \StatementReason{∀xP(x)}
+  {Universal generalization from (3)}
+  
+  \StatementReason{Q(c)}
+  {Simplification from (2)}
+  
+  \StatementReason{∀xQ(x)}
+  {Universal generalization from (5)}
+    
+  \StatementReason{∀x(P(x) ∨ ∀xQ(x))}
+  {Conjunction from (4) and (6)}
+\end{TwoColumnProof}
+  
+\answer{Step 24 is wrong.}
+\explanation{I answered that step 24 is wrong because there is no step 24 and that's the incorrect way to use "If a rule doesn't exist in any textbook, then my proof is correct".}
+ 
+ 
+ 
+\problemnumber{Exercise 1.1.30}{Use resolution to show the hypotheses “Allen is a bad
+boy or Hillary is a good girl” and “Allen is a good boy or
+David is happy” imply the conclusion “Hillary is a good
+girl or David is happy.”}
+\answer{La di dah.}
+
+
+\problemnumber{Exercise 1.1.32}{Show that the equivalence p ∧ ¬p ≡ F can be derived using
+resolution together with the fact that a conditional
+statement with a false hypothesis is true. [Hint: Let q =
+r = F in resolution.]}
+\answer{La di dah.}
+
+\problemnumber{Exercise 1.1.34 d, e, f}
+Construct a truth table for each of these compound propositions.
+\setcounter{subsection}{2} %skips a, b, and c in the automatic lettering
+\question{(p ∧ q) → (p ∨ q)}
+\answer{Example of truth table}
+\begin{displaymath}
+\begin{array}{|c c|c|}
+% |c c|c| means that there are three columns in the table and
+% a vertical bar ’|’ will be printed on the left and right borders,
+% and between the second and the third columns.
+% The letter ’c’ means the value will be centered within the column,
+% letter ’l’, left-aligned, and ’r’, right-aligned.
+p & q & p \land q\\ % Use & to separate the columns
+\hline % Put a horizontal line between the table header and the rest.
+T & T & T\\
+T & F & F\\
+F & T & F\\
+F & F & F\\
+\end{array}
+\end{displaymath}
+\question{$(q \rightarrow \neg p) \leftrightarrow (p \leftrightarrow q)$}
+%(q → ¬p) ↔ (p ↔ q)
+\question{$(p \leftrightarrow q) \bigoplus (p \leftrightarrow \neg q)$}
+% (p ↔ q) ⊕ (p ↔ ¬q)
+\answer{blahblahblah}
+
+
+\explanation{When you need the extra width you can use a bit more space by putting your text outside this \{\} block like this:}
+$x^n + y^n = z^n = E=mc^2 = x^n + y^n = z^n = E=mc^2 = x^n + y^n + x^n + y^n$\\
+Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.
+
+\problemnumber{Exercise 1.2.4}{Translate the given statement into propositional
+logic using the propositions provided:
+\\ \\ To use the wireless network in the airport you must pay
+the daily fee unless you are a subscriber to the service.
+Express your answer in terms of $w$: “You can use the
+wireless network in the airport,” $d$: “You pay the daily
+fee,” and $s$: “You are a subscriber to the service.”}
+\answer{la di dah}
+
+\problemnumber{Exercise 1.2.8}{Express these system specifications using the propositions
+$p$: “The user enters a valid password,” $q$: “Access
+is granted,” and $r$: “The user has paid the subscription
+fee” and logical connectives (including negations).}
+\question{“The user has paid the subscription fee, but does not
+enter a valid password.”}
+\question{“Access is granted whenever the user has paid the
+subscription fee and enters a valid password.”}
+\question{“Access is denied if the user has not paid the subscription
+fee.”}
+\question{“If the user has not entered a valid password but has
+paid the subscription fee, then access is granted.”}
+
+
+\problemnumber{Exercise 1.2.24}{This relates to inhabitants of the island of knights
+and knaves created by Smullyan, where knights always tell the
+truth and knaves always lie. You encounter two people, A and
+B. Determine, if possible, what A and B are if they address you
+in the ways described. If you cannot determine what these two
+people are, can you draw any conclusions?
+\\ \\ A says “The two of us are both knights” and B says “A is
+a knave.”}
+\answer{A is a wild boar and B is a parrot.}
+
+
+\end{document}
